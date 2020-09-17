@@ -8,13 +8,12 @@ import os
 from tf_explain.core.grad_cam import GradCAM
 from tf_explain.core.occlusion_sensitivity import OcclusionSensitivity
 
+st.set_option('deprecation.showfileUploaderEncoding', False)
+
+
 @st.cache(hash_funcs={cv2.dnn_Net: hash})
 def load_face_detector_and_model():
-    prototxt_path = os.path.sep.join(["face_detector", "deploy.prototxt"])
-    weights_path = os.path.sep.join(["face_detector",
-                                    "res10_300x300_ssd_iter_140000.caffemodel"])
-    cnn_net = cv2.dnn.readNet(prototxt_path, weights_path)
-
+    cnn_net = cv2.dnn.readNet('deploy.prototxt', 'res10_300x300_ssd_iter_140000.caffemodel')
     return cnn_net
 
 @st.cache(allow_output_mutation=True)
