@@ -7,8 +7,8 @@ import cv2
 from tf_explain.core.grad_cam import GradCAM
 from tf_explain.core.occlusion_sensitivity import OcclusionSensitivity
 
-st.set_option('deprecation.showfileUploaderEncoding', False)
-
+#st.set_option('deprecation.showfileUploaderEncoding', False)
+#only for notebook
 
 @st.cache(hash_funcs={cv2.dnn_Net: hash})
 def load_face_detector_and_model():
