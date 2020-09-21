@@ -1,5 +1,5 @@
 numpy
-opencv_python == 4.2.0.34
+opencv-contrib-python-headless
 streamlit
 tensorflow == 2.0.1
 tf-explain == 0.2.1
